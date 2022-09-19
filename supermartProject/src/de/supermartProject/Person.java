@@ -9,43 +9,56 @@ package de.supermartProject;
 public class Person {
 
 	//******ATRIBUTE*******
-	protected String gender;
+	protected String vorname;
 	
-	protected String name;
+	protected String familienname;
 
 	
 	//*********KONSTRUKTUR*********
-	public void person(String gender, String name) {
-		this.gender = gender;
-		this.name = name;	
+	public Person(String vorname, String familienname) {
+		super();
+		this.vorname = vorname;
+		this.familienname = familienname;
 	}
-	
+
+	public Person() {
+		super();
+	}
+
 	/**
 	 * methode einkaufen die überschrieben wird
 	 */
 	public void einkaufen() {
-		System.out.println("Alle können einkaufen");
+		System.out.println(" Alle können einkaufen soger der Chef." + Person.this);
 	}
-	
+
+
 	//**********SETTER/GETTER*********
-	public String getName() {
-		return name;
+	
+	public String getVorname() {
+		return vorname;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public String getGender() {
-		return gender;
+	public void setVorname(String vorname) {
+		this.vorname = vorname;
 	}
 
-	public void setGender(String gender) {
-		this.gender = gender;
+	public String getFamilienname() {
+		return familienname;
 	}
+
+	public void setFamilienname(String familienname) {
+		this.familienname = familienname;
+	}
+
+	//*****TO_STRING METHODE********
+	@Override
+	public String toString() {
+		return vorname + familienname;
+	}
+
+
 	
-	//******TO-String-Methode**********
-	public String tostring() {
-		return gender + name;
-	}
+	
+	
 }

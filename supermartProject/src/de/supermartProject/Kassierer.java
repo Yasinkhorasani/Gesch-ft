@@ -11,13 +11,19 @@ public final class Kassierer extends Mitarbeiter {
 	
 	
 	//*******Atribut***********
-	private boolean zugangsKasse ;
+	public boolean zugangsKasse;
 	
 	
 	// *****konstuktor*******
-	public Kassierer (String gender,String name,long id,boolean zugangsKasse) {
-		super(gender, name, id);
-		this.zugangsKasse = zugangsKasse;
+	
+	public Kassierer(String vorname, String familienname, long id, boolean zugangsKasse) {
+		super(vorname, familienname, id);
+		this.zugangsKasse = zugangsKasse;	
+	}
+	
+	public Kassierer(String vorname, String familienname, long id) {
+		super(vorname, familienname, id);
+	
 	}
 	
 	//*******METHODE*********
@@ -26,9 +32,11 @@ public final class Kassierer extends Mitarbeiter {
 	 */
 	@Override
 	public final void einkaufen() {
-		System.out.println("Alle können einkaufen  und der Mitarbeiter können einräumen. "
-				+ "Der kassierer können zusätzlich kassieren");
+		System.out.println(" Alle können einkaufen  und der Mitarbeiter können einräumen. "
+				+ "Der kassierer können zusätzlich kassieren.");
 	}
+	
+	
 	
 	public void geldKassieren() {
 	System.out.println("Jeder kann an der Kasse bezahlen");
@@ -40,11 +48,16 @@ public final class Kassierer extends Mitarbeiter {
 		
 	}
 	public void setZugangsKasse(boolean zugangsKasse) {
-		this.zugangsKasse = zugangsKasse;
-		if (zugangsKasse) {
-			System.out.println("sie haben erlaubniss")
-		}
 	
+				this.zugangsKasse = zugangsKasse;
+				if (!zugangsKasse) {
+					System.out.println("sie haben erlaubniss");
+				}
+	}
+
+	@Override
+	public String toString() {
+		return vorname + familienname + id ;
 	}
 	
 	

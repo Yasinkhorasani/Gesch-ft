@@ -13,19 +13,35 @@ public class Mitarbeiter extends Person  {
 
    
    //********Konstructor*******
-public Mitarbeiter(String gender, String name, long id) {
-	super();
-	this.id= id;
-}
+	public Mitarbeiter(String vorname, String familienname, long id) {
+		super(vorname, familienname);
+		this.id = id;
+	}
+
 	//********METHODE*********
 	@Override
 	public void einkaufen() {
-		System.out.println("Alle können einkaufen.Der Mitarbeiter kann zusätzlich einräumen");
+		System.out.println(" Alle können einkaufen.Der Mitarbeiter kann zusätzlich einräumen" );
+		// super.einkaufen();
+	}
+	public void einräumen(Person x) {
+		System.out.println(" Das regal müss Heute eingerümt werden.");
+		super.familienname =familienname ;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 	
-	//**********TOSTRING-METHODE**********
+	//**********TO-STRING-METHODE**********
+	@Override
 	public String toString() {
-		return gender +""+ name+""+ id;
+		return vorname +""+ familienname + " [ id=" + id  + "]";
 	}
+	
 	
 }
